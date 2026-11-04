@@ -67,4 +67,9 @@ logged in with a session, so the page cannot pretend to be someone else.
 
 ## Team
 
-Add names and student numbers here.
+| Full Name | Student Number |
+|-----------|----------------|
+| benny simpamba | 2410092 |
+| alfred sichivula | 2410025 |
+| genesis funga | 2410290 |
+| angel mugala | 24 |
