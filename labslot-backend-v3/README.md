@@ -69,7 +69,7 @@ logged in with a session, so the page cannot pretend to be someone else.
 
 | Full Name | Student Number |
 |-----------|----------------|
-| benny simpamba | 2410092 |
-| alfred sichivula | 2410025 |
-| genesis funga | 2410290 |
-| angel mugala | 24 |
+| Benny Simpamba | 2410092 |
+| Alfred Sichivula | 2410025 |
+| Genesis Funga | 2410290 |
+| Angel Mugala | 2410283 |
