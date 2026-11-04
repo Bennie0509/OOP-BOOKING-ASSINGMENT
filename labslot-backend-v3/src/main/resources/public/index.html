@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LabSlot: book lab equipment</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="message" class="message" role="status" aria-live="polite" hidden></div>
+
+  <!-- Login -->
+  <main id="login-view" class="login-wrap" hidden>
+    <div class="login-card">
+      <p class="brand"><span class="dot"></span>LabSlot</p>
+      <h1>Welcome <span class="accent">back</span></h1>
+      <p class="sub">Log in to book lab equipment or approve requests.</p>
+      <form id="login-form" class="stack">
+        <label>Email
+          <input id="email" type="email" autocomplete="username" required>
+        </label>
+        <label>Password
+          <input id="password" type="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit" class="btn primary">Log in</button>
+      </form>
+      <details class="demo">
+        <summary>Demo accounts</summary>
+        <ul>
+          <li>Student: alice@example.com / alice123</li>
+          <li>Student: mwansa@example.com / mwansa123</li>
+          <li>Supervisor: smith@example.com / smith123</li>
+        </ul>
+      </details>
+    </div>
+  </main>
+
+  <!-- App -->
+  <div id="app-view" class="page" hidden>
+    <header class="topbar">
+      <p class="brand"><span class="dot"></span>LabSlot</p>
+      <div class="who">
+        <span id="who-label"></span>
+        <button id="logout" type="button" class="btn soft">Log out</button>
+      </div>
+    </header>
+
+    <h1 class="greeting">Hi, <span id="who-name" class="accent"></span></h1>
+
+    <section class="hero" aria-label="Summary">
+      <div>
+        <p id="hero-title" class="hero-title"></p>
+        <p id="hero-sub" class="hero-sub"></p>
+      </div>
+      <div id="ring" class="ring" aria-hidden="true">
+        <div><strong id="ring-value"></strong><span id="ring-label"></span></div>
+      </div>
+    </section>
+
+    <section id="stats" class="stats" aria-label="Lab status" hidden>
+      <div class="stat"><strong id="stat-available">–</strong><span>Devices available now</span></div>
+      <div class="stat"><strong id="stat-out">–</strong><span>Checked out</span></div>
+      <div id="stat-overdue-box" class="stat"><strong id="stat-overdue">–</strong><span>Overdue</span></div>
+      <div class="stat"><strong id="stat-approval">–</strong><span>Awaiting approval</span></div>
+    </section>
+
+    <section id="book-section" class="card" aria-labelledby="book-h">
+      <h2 id="book-h">Book equipment</h2>
+      <form id="book-form" class="book-form">
+        <label>Equipment
+          <select id="equipmentId" required></select>
+        </label>
+        <label>Start time
+          <input id="startTime" type="datetime-local" required>
+        </label>
+        <label>Minutes
+          <input id="duration" type="number" min="5" step="5" value="60" required>
+        </label>
+        <button id="book-submit" type="submit" class="btn primary">Book this slot</button>
+      </form>
+      <p class="hint">Restricted equipment needs a supervisor to approve it. If you don’t check in within 15 minutes of the start time, the slot expires. Items must be handed back to a supervisor, who confirms the return; late returns earn penalty points.</p>
+    </section>
+
+    <section aria-labelledby="eq-h">
+      <h2 id="eq-h" class="section-title">Equipment</h2>
+      <div id="equipment-grid" class="tiles"></div>
+    </section>
+
+    <section aria-labelledby="bk-h">
+      <h2 id="bk-h" class="section-title">Bookings</h2>
+      <div id="booking-list" class="bookings"></div>
+      <p id="empty" class="empty" hidden></p>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
