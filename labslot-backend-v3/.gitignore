@@ -1,7 +1,0 @@
-target/
-.vscode/
-.idea/
-*.class
-*.log
-.DS_Store
-data/*.csv
